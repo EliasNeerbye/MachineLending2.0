@@ -10,8 +10,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 const authRoutes = require('./routes/authRoutes');
+const machineRoutes = require('./routes/machineRoutes');
 
 app.use('/api/auth', authRoutes);
+app.use('/api/machines', machineRoutes);
 
 app.listen(config.PORT, () => {
     console.log(`Server is running on port ${config.PORT}`);
