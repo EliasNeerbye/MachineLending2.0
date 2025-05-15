@@ -6,9 +6,8 @@ module.exports = async (req, res) => {
         return res.status(400).json({ message: 'All fields are required' });
     }
 
-    try {
-        const existingPerson = await Person.find({ email });
-        if (existingPerson.length > 0) {
+    try {        const existingPerson = await Person.findOne({ email });
+        if (existingPerson) {
             return res.status(400).json({ message: 'Email already exists' });
         }
         const newPerson = new Person({

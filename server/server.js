@@ -1,5 +1,6 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
+const mongoose = require('mongoose');
 
 const app = express();
 
@@ -8,6 +9,12 @@ const config = require('./utils/config');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+mongoose.connect(config.MONGODB_URI).then(() => {
+    console.log('Connected to MongoDB');
+}).catch((err) => {
+    console.error('Error connecting to MongoDB:', err);
+});
 
 const authRoutes = require('./routes/authRoutes');
 const machineRoutes = require('./routes/machineRoutes');

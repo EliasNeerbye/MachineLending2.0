@@ -13,8 +13,7 @@ module.exports = async (req, res) => {
         return res.status(400).json({ message: 'Email and password are required' });
     }
 
-    try {
-        const existingUser = await User.find({ email });
+    try {        const existingUser = await User.findOne({ email });
         if (!existingUser) {
             return res.status(400).json({message: "User does not exist"});
         }

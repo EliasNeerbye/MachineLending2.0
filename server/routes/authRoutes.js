@@ -5,6 +5,7 @@ const router = require('express').Router();
 const login = require('../controllers/auth/login');
 const register = require('../controllers/auth/register');
 const logout = require('../controllers/auth/logout');
+const me = require('../controllers/auth/me');
 
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, 
@@ -17,6 +18,7 @@ router.use(authenticate);
 
 router.post('/login', login);
 router.post('/register', register);
-router.all('/logout', logout);
+router.post('/logout', logout);
+router.get('/me', me);
 
 module.exports = router;
