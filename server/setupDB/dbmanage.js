@@ -2,7 +2,7 @@
 const { program } = require('commander');
 const { setupDatabase } = require('./scripts/setupDatabase');
 
-// ANSI color codes
+
 const BLUE = '\x1b[34m';
 const RED = '\x1b[31m';
 const RESET = '\x1b[0m';
@@ -36,5 +36,5 @@ program
         }
     });
 
-// Parse command line arguments and execute
+
 program.parse();

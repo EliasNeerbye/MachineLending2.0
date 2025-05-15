@@ -5,10 +5,10 @@ const setupUsers = async () => {
     try {
         console.log('Setting up default admin user...');
         
-        // Always clear existing admin users to avoid duplicates
+        
         await User.deleteMany({ role: 'admin' });
         
-        // Create default admin user with standard password
+        
         const hashedPassword = await hashPassword('admin123');
         await User.create({
             email: 'admin@example.com',
