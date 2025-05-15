@@ -1,0 +1,31 @@
+{
+  "name": "machine-lending-2-0",
+  "version": "1.0.0",
+  "description": "A webserver backend to handle machine lending",
+  "homepage": "https://github.com/EliasNeerbye/MachineLending2.0#readme",
+  "bugs": {
+    "url": "https://github.com/EliasNeerbye/MachineLending2.0/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EliasNeerbye/MachineLending2.0.git"
+  },
+  "license": "ISC",
+  "author": "Blank",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "argon2": "^0.43.0",
+    "cookie-parser": "^1.4.7",
+    "csv-parse": "^5.6.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.5.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.14.3"
+  }
+}
